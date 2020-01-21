@@ -4,10 +4,28 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.sxzhongf</groupId>
     <artifactId>deep-in-dubbo</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <description>for learning dubbo open source codes</description>
+    <modules>
+        <module>demo-provider-xml</module>
+        <module>demo-consumer-xml</module>
+        <module>demo-common-api</module>
+    </modules>
     <name>deep in dubbo</name>
 
+<!--    <dependencies>-->
+<!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>com.alibaba</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>dubbo</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <version>2.6.7</version>&ndash;&gt;-->
+<!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.dubbo</groupId>-->
+<!--            <artifactId>dubbo</artifactId>-->
+<!--            <version>2.7.5</version>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
 </project>
