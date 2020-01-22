@@ -29,10 +29,15 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.16</version>
+            <groupId>org.arakhne.afc.advanced</groupId>
+            <artifactId>slf4j</artifactId>
+            <version>17.0</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>log4j</groupId>-->
+<!--            <artifactId>log4j</artifactId>-->
+<!--            <version>1.2.16</version>-->
+<!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>org.projectlombok</groupId>-->
 <!--            <artifactId>lombok</artifactId>-->
