@@ -28,5 +28,15 @@
             <artifactId>demo-common-api</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.projectlombok</groupId>-->
+<!--            <artifactId>lombok</artifactId>-->
+<!--            <version>1.18.8</version>-->
+<!--        </dependency>-->
     </dependencies>
 </project>
