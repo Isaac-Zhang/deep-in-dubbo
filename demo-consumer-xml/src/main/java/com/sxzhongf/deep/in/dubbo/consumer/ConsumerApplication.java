@@ -1,6 +1,6 @@
 package com.sxzhongf.deep.in.dubbo.consumer;
 
-import com.sxzhongf.deep.in.dubbo.api.service.IDemoService;
+import com.sxzhongf.deep.in.dubbo.api.service.IGreetingService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -17,7 +17,7 @@ public class ConsumerApplication {
         );
         context.start();
         // Obtaining a remote service proxy
-        IDemoService demoService = (IDemoService) context.getBean("demoService");
+        IGreetingService demoService = (IGreetingService) context.getBean("demoService");
         // Executing remote methods
         String hello = demoService.sayHello("Isaac");
         // Display the call result

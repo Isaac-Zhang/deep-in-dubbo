@@ -11,7 +11,7 @@
     <!-- use dubbo protocol to export service on port 20880 -->
     <dubbo:protocol name="dubbo" port="20880"/>
     <!-- service implementation, as same as regular local bean -->
-    <bean id="demoService" class="com.sxzhongf.deep.in.dubbo.provider.service.impl.DemoServiceImpl"/>
+    <bean id="demoService" class="com.sxzhongf.deep.in.dubbo.provider.service.impl.GreetingServiceImpl"/>
     <!-- declare the service interface to be exported -->
-    <dubbo:service interface="com.sxzhongf.deep.in.dubbo.api.service.IDemoService" ref="demoService"/>
+    <dubbo:service interface="com.sxzhongf.deep.in.dubbo.api.service.IGreetingService" ref="demoService"/>
 </beans>
