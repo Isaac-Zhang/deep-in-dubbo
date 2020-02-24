@@ -1,4 +1,4 @@
-package com.sxzhongf.deep.in.dubbo.consumer.api;
+package com.sxzhongf.deep.in.dubbo.consumer.api.async;
 
 import com.alibaba.dubbo.remoting.exchange.ResponseCallback;
 import com.alibaba.dubbo.rpc.protocol.dubbo.FutureAdapter;
@@ -23,7 +23,7 @@ public class ApiAsyncConsumerForCallBackApplication {
 
         // 1. 创建引用实例，初始化
         ReferenceConfig<IGreetingService> referenceConfig = new ReferenceConfig<IGreetingService>();
-        referenceConfig.setApplication(new ApplicationConfig("deep-in-dubbo-first-async-consumer"));
+        referenceConfig.setApplication(new ApplicationConfig("deep-in-dubbo-first-async-consumer2"));
         referenceConfig.setRegistry(new RegistryConfig("zookeeper://39.106.223.16:2181/"));
         referenceConfig.setInterface(IGreetingService.class);
         referenceConfig.setGroup("dubbo-sxzhongf-group");
@@ -35,7 +35,7 @@ public class ApiAsyncConsumerForCallBackApplication {
 
         // 3. 直接返回null
         IGreetingService greetingService = referenceConfig.get();
-        System.out.printf(greetingService.sayHello("async pan"));
+        System.out.println(greetingService.sayHello("async pan"));
 
         // 4. 等待异步返回结果
         ((FutureAdapter) RpcContext.getContext().getFuture()).getFuture().setCallback(

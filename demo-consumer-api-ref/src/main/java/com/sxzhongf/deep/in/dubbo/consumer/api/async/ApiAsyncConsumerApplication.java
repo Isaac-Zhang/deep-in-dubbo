@@ -1,4 +1,4 @@
-package com.sxzhongf.deep.in.dubbo.consumer.api;
+package com.sxzhongf.deep.in.dubbo.consumer.api.async;
 
 import com.sxzhongf.deep.in.dubbo.api.service.IGreetingService;
 import org.apache.dubbo.config.ApplicationConfig;
@@ -26,16 +26,17 @@ public class ApiAsyncConsumerApplication {
         referenceConfig.setInterface(IGreetingService.class);
         referenceConfig.setGroup("dubbo-sxzhongf-group");
         referenceConfig.setVersion("1.0.0");
+        referenceConfig.setTimeout(5000);
 
         // 2. 设置为异步
         referenceConfig.setAsync(true);
 
         // 3. 直接返回null
         IGreetingService greetingService = referenceConfig.get();
-        System.out.printf(greetingService.sayHello("async pan"));
+        System.out.println(greetingService.sayHello("async pan"));
 
         // 4. 等待异步返回结果
         Future<String> future = RpcContext.getContext().getFuture();
-        System.out.printf("async api consumer return : " + future.get());
+        System.out.println("async api consumer return : " + future.get());
     }
 }
