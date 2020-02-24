@@ -9,4 +9,6 @@ package com.sxzhongf.deep.in.dubbo.api.service;
 public interface IGreetingService {
 
     String sayHello(String name);
+
+    SampleResult<String> testGeneric(SamplePojo pojo);
 }

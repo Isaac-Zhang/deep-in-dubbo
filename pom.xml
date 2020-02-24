@@ -10,11 +10,26 @@
     <version>1.0-SNAPSHOT</version>
     <description>for learning dubbo open source codes</description>
     <modules>
-        <module>demo-provider-xml</module>
+        <module>demo-provider-xml-publish</module>
         <module>demo-consumer-xml</module>
         <module>demo-common-api</module>
+        <module>demo-provider-api-publish</module>
     </modules>
-    <name>deep in dubbo</name>
+    <name>deep-in-dubbo</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 <!--    <dependencies>-->
 <!--&lt;!&ndash;        <dependency>&ndash;&gt;-->

@@ -14,7 +14,6 @@ public class ProviderApplication {
 
     public static void main(String[] args) {
         try {
-            System.setProperty("java.net.preferIPv4Stack", "true");
             ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                     new String[]{"META-INF/spring/dubbo-demo-provider.xml"}
             );
