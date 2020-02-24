@@ -11,9 +11,10 @@
     <description>for learning dubbo open source codes</description>
     <modules>
         <module>demo-provider-xml-publish</module>
-        <module>demo-consumer-xml</module>
+        <module>demo-consumer-xml-ref</module>
         <module>demo-common-api</module>
         <module>demo-provider-api-publish</module>
+        <module>demo-consumer-api-ref</module>
     </modules>
     <name>deep-in-dubbo</name>
 
@@ -26,6 +27,7 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
         </plugins>

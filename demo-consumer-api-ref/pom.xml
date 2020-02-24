@@ -9,7 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>demo-provider-api-publish</artifactId>
+    <artifactId>demo-consumer-api-ref</artifactId>
+
 
 
     <dependencies>
@@ -30,7 +31,7 @@
         <dependency>
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
-            <version>3.4.6</version>
+            <version>3.4.9</version>
         </dependency>
 
         <dependency>

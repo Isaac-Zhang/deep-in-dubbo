@@ -1,4 +1,4 @@
-package com.sxzhongf.deep.in.dubbo.provider.service.impl;
+package com.sxzhongf.deep.in.dubbo.provider.api;
 
 import com.sxzhongf.deep.in.dubbo.api.service.IGreetingService;
 import com.sxzhongf.deep.in.dubbo.api.service.SamplePojo;
@@ -7,13 +7,14 @@ import org.apache.dubbo.common.json.JSON;
 import org.apache.dubbo.rpc.RpcContext;
 
 /**
- * DemoServiceImpl for 接口实现
+ * GreetingServiceImpl for 实现 {@link IGreetingService}
  *
  * @author <a href="mailto:magicianisaac@gmail.com">Isaac.Zhang | 若初</a>
- * @since 2020/1/21
+ * @since 2020/2/24
  **/
 public class GreetingServiceImpl implements IGreetingService {
 
+    @Override
     public String sayHello(String name) {
 
         try {
@@ -26,6 +27,8 @@ public class GreetingServiceImpl implements IGreetingService {
         return "Hello, " + name + " ," + RpcContext.getContext().getAttachment("company");
     }
 
+
+    @Override
     public SampleResult<String> testGeneric(SamplePojo pojo) {
         SampleResult<String> result = new SampleResult<String>();
         result.setSuccess(true);
