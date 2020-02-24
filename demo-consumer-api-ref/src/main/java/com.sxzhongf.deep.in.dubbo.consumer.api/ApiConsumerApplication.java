@@ -23,6 +23,7 @@ public class ApiConsumerApplication {
         referenceConfig.setRegistry(new RegistryConfig("zookeeper://39.106.223.16:2181/"));
         // 4. 设置服务接口和超时时间
         referenceConfig.setInterface(IGreetingService.class);
+        // 默认重试3次
         referenceConfig.setTimeout(5000);
 //        // 5. 设置自定义负载均衡策略和集群容错策略
 //        referenceConfig.setLoadbalance("isaacLoadBalance");
@@ -34,7 +35,7 @@ public class ApiConsumerApplication {
         IGreetingService greetingService = referenceConfig.get();
         // 8. 设置隐式参数
         RpcContext.getContext().setAttachment("company", "sxzhongf");
-        // 9. 调用服务
+        //9. 调用服务
         System.out.println(greetingService.sayHello("pan"));
     }
 }

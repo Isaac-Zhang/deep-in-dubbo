@@ -18,6 +18,7 @@ public class GreetingServiceImpl implements IGreetingService {
     public String sayHello(String name) {
 
         try {
+            System.out.println("thread sleep 1s.");
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
