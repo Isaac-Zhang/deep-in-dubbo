@@ -15,6 +15,7 @@
         <module>demo-common-api</module>
         <module>demo-provider-api-publish</module>
         <module>demo-consumer-api-ref</module>
+        <module>demo-consumer-api-generic-ref</module>
     </modules>
     <name>deep-in-dubbo</name>
 
