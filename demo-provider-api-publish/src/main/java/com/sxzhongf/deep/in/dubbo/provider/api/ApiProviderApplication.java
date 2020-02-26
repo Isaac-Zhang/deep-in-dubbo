@@ -4,12 +4,14 @@ import com.sxzhongf.deep.in.dubbo.api.service.IGreetingService;
 import org.apache.dubbo.config.ApplicationConfig;
 import org.apache.dubbo.config.RegistryConfig;
 import org.apache.dubbo.config.ServiceConfig;
+import org.apache.dubbo.rpc.RpcContext;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 /**
- * ApiProviderApplication for TODO
+ * ApiProviderApplication for
+ * TODO : 表示在此处将要实现的功能，提醒在后续阶段将会在此处添加代码
+ * FIXME : 表示此处的代码逻辑有出入，或者根本不能运行，提醒在后续阶段将会修改此处代码
  *
  * @author <a href="mailto:magicianisaac@gmail.com">Isaac.Zhang | 若初</a>
  * @since 2020/2/24
@@ -31,6 +33,7 @@ public class ApiProviderApplication {
         serviceConfig.setRef(new GreetingServiceImpl());
         serviceConfig.setVersion("1.0.0");
         serviceConfig.setGroup("dubbo-sxzhongf-group");
+        RpcContext.getContext().setAttachment("age","18");
 
 
         // 6. 设置自定义线程池策略
