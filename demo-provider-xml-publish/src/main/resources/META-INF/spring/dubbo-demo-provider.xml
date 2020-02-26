@@ -13,5 +13,8 @@
     <!-- service implementation, as same as regular local bean -->
     <bean id="demoService" class="com.sxzhongf.deep.in.dubbo.provider.service.impl.GreetingServiceImpl"/>
     <!-- declare the service interface to be exported -->
-    <dubbo:service interface="com.sxzhongf.deep.in.dubbo.api.service.IGreetingService" ref="demoService"/>
+    <dubbo:service interface="com.sxzhongf.deep.in.dubbo.api.service.IGreetingService" ref="demoService">
+        <dubbo:method name="sayHello" async="false" timeout="0" retries="3"></dubbo:method>
+        <dubbo:method name="testGeneric" async="false" timeout="10000" retries="3"></dubbo:method>
+    </dubbo:service>
 </beans>
