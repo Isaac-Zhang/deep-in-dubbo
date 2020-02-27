@@ -12,7 +12,6 @@
     <artifactId>demo-consumer-api-ref</artifactId>
 
 
-
     <dependencies>
         <dependency>
             <groupId>org.apache.dubbo</groupId>
@@ -32,6 +31,17 @@
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
             <version>3.4.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.19</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.3</version>
         </dependency>
 
         <dependency>
