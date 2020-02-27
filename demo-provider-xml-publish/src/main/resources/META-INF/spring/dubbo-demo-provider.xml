@@ -5,7 +5,7 @@
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
     <!-- provider's application name, used for tracing dependency relationship -->
-    <dubbo:application name="demo-provider"/>
+    <dubbo:application name="first-xml-provider"/>
     <!-- use multicast registry center to export service -->
     <dubbo:registry address="zookeeper://39.106.223.16:2181/"/>
     <!-- use dubbo protocol to export service on port 20880 -->
@@ -13,7 +13,8 @@
     <!-- service implementation, as same as regular local bean -->
     <bean id="demoService" class="com.sxzhongf.deep.in.dubbo.provider.service.impl.GreetingServiceImpl"/>
     <!-- declare the service interface to be exported -->
-    <dubbo:service interface="com.sxzhongf.deep.in.dubbo.api.service.IGreetingService" ref="demoService">
+    <dubbo:service interface="com.sxzhongf.deep.in.dubbo.api.service.IGreetingService"
+                   ref="demoService" version="1.0.0" group="dubbo-sxzhongf-group">
         <dubbo:method name="sayHello" async="false" timeout="0" retries="3"></dubbo:method>
         <dubbo:method name="testGeneric" async="false" timeout="10000" retries="3"></dubbo:method>
     </dubbo:service>

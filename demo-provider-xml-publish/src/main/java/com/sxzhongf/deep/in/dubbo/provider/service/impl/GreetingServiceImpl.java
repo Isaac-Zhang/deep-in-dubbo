@@ -23,7 +23,7 @@ public class GreetingServiceImpl implements IGreetingService {
         }
 
         // 获取调用方在上下文对象中附加的变量的值
-        return "Hello, " + name + " ," + RpcContext.getContext().getAttachment("company");
+        return "Hello,XML " + name + " ," + RpcContext.getContext().getAttachment("company");
     }
 
     public SampleResult<String> testGeneric(SamplePojo pojo) {
