@@ -5,16 +5,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-    <!-- consumer's application name, used for tracing dependency relationship (not a matching criterion),
-    don't set it same as provider -->
-    <dubbo:application name="demo-consumer"/>
-    <!-- use multicast registry center to discover service -->
-    <dubbo:registry address="multicast://224.5.6.7:1234?unicast=false"/>
-    <!-- generate proxy for the remote service, then demoService can be used in the same way as the
-    local regular interface -->
-    <dubbo:reference proxy="jdk" scope="remote" id="demoService" generic="false" check="false" async="false" group="dubbo" version="1.0.0"
+    <dubbo:application name="first-consumer-xml"/>
+    <dubbo:registry address="zookeeper://39.106.223.16:2181/"/>
+    <dubbo:reference proxy="javassist" scope="remote"
+                     id="demoService"
+                     generic="false"
+                     check="false"
+                     async="false"
+                     group="dubbo-sxzhongf-group"
+                     version="1.0.0"
                      interface="com.sxzhongf.deep.in.dubbo.api.service.IGreetingService">
-        <dubbo:method name="sayHello" retries="3" timeout="0" mock="false"></dubbo:method>
-        <dubbo:method name="testGeneric" retries="3" timeout="0" mock="false"></dubbo:method>
+        <dubbo:method name="sayHello" retries="3" timeout="5000" mock="false" />
+        <dubbo:method name="testGeneric" retries="3" timeout="5000" mock="false" />
     </dubbo:reference>
 </beans>
