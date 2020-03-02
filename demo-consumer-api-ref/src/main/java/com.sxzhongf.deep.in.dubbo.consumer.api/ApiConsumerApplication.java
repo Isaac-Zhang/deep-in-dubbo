@@ -31,6 +31,8 @@ public class ApiConsumerApplication {
         // 6. 设置服务分组和版本
         referenceConfig.setGroup("dubbo-sxzhongf-group");
         referenceConfig.setVersion("1.0.0");
+        // 重试5次+默认1次，共执行6次。org.apache.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke
+        referenceConfig.setRetries(5);
         // 7. 引用服务
         IGreetingService greetingService = referenceConfig.get();
         // 8. 设置隐式参数
