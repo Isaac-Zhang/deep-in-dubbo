@@ -29,7 +29,8 @@ public class ApiConsumerApplication {
 //        referenceConfig.setLoadbalance("isaacLoadBalance");
 //        referenceConfig.setCluster("isaacBroadcast");
         // 6. 设置服务分组和版本
-        referenceConfig.setGroup("dubbo-sxzhongf-group");
+//        referenceConfig.setGroup("*");
+        referenceConfig.setGroup("dubbo-sxzhongf-group,dubbo");
         referenceConfig.setVersion("1.0.0");
         // 重试5次+默认1次，共执行6次。org.apache.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke
         referenceConfig.setRetries(5);
