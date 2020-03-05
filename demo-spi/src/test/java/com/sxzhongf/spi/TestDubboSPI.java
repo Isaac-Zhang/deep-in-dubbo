@@ -17,6 +17,8 @@ public class TestDubboSPI {
         ExtensionLoader<IRobot> extensionLoader = ExtensionLoader.getExtensionLoader(IRobot.class);
         extensionLoader.getExtension("bumblebee").hi();
         extensionLoader.getExtension("optimusPrime").hi();
+        //也会获取默认
+        extensionLoader.getExtension("true").hi();
         extensionLoader.getDefaultExtension().hi();
     }
 }
