@@ -19,7 +19,9 @@ public class ApiConsumerApplication {
         // 1. 创建服务引用对象实例
         ReferenceConfig<IGreetingService> referenceConfig = new ReferenceConfig<IGreetingService>();
         // 2. 设置应用程序信息
-        referenceConfig.setApplication(new ApplicationConfig("deep-in-dubbo-first-consumer"));
+        ApplicationConfig applicationConfig = new ApplicationConfig("deep-in-dubbo-first-consumer");
+        applicationConfig.setCompiler("jdk");
+        referenceConfig.setApplication(applicationConfig);
         // 3. 设置注册中心
         referenceConfig.setRegistry(new RegistryConfig("zookeeper://39.106.223.16:2181/"));
         // 4. 设置服务接口和超时时间
