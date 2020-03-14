@@ -33,6 +33,10 @@ public class ApiProviderApplication {
         serviceConfig.setRef(new GreetingServiceImpl());
         serviceConfig.setVersion("1.0.0");
         serviceConfig.setGroup("dubbo-sxzhongf-group");
+        // 本地启动服务进行一些调试工作，可以设置禁止服务导出
+        serviceConfig.setExport(true);
+        // 延迟导出服务
+        serviceConfig.setDelay(1000);
         RpcContext.getContext().setAttachment("age","18");
 
 
@@ -43,6 +47,10 @@ public class ApiProviderApplication {
 
         // 7. 导出服务，启动Netty监听链接请求，并将服务注册到注册中心
         serviceConfig.export();
+        /*
+            比如服务的配置信息，服务实例等。每个被导出的服务对应一个 {@link ProviderModel}。
+            ApplicationModel 持有所有的 ProviderModel。
+         */
 
         // 8. 挂起线程，避免服务停止
         System.out.println("api provider service is started...");
