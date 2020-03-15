@@ -15,7 +15,11 @@
     <!-- declare the service interface to be exported -->
     <dubbo:service interface="com.sxzhongf.deep.in.dubbo.api.service.IGreetingService"
                    ref="demoService" version="1.0.0" group="dubbo-sxzhongf-group">
-        <dubbo:method name="sayHello" async="false" timeout="0" retries="3"></dubbo:method>
+        <dubbo:method name="sayHello" async="false" timeout="0" retries="3">
+            <!-- org.apache.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol line 347 will validate-->
+<!--            <dubbo:argument type=""/>-->
+<!--            <dubbo:parameter key="" value=""/>-->
+        </dubbo:method>
         <dubbo:method name="testGeneric" async="false" timeout="10000" retries="3"></dubbo:method>
     </dubbo:service>
 </beans>
