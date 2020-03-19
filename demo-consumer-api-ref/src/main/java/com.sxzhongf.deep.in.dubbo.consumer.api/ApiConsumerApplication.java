@@ -45,7 +45,6 @@ public class ApiConsumerApplication {
         // 8. 设置隐式参数
         RpcContext.getContext().setAttachment("company", "sxzhongf");
         // 获取provider端传递的隐式参数(FIXME: 需要后续追踪)
-//        System.out.println("年龄是：" + RpcContext.getContext().getAttachment("age"));
         //9. 调用服务
         System.out.println(greetingService.sayHello("pan"));
     }
