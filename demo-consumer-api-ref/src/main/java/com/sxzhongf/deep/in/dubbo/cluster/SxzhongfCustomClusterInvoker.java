@@ -2,6 +2,7 @@ package com.sxzhongf.deep.in.dubbo.cluster;
 
 import java.util.List;
 import org.apache.dubbo.rpc.Invocation;
+import org.apache.dubbo.rpc.Invoker;
 import org.apache.dubbo.rpc.Result;
 import org.apache.dubbo.rpc.RpcException;
 import org.apache.dubbo.rpc.cluster.Directory;
@@ -14,14 +15,16 @@ import org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker;
  * @author <a href="mailto:magicianisaac@gmail.com">Isaac.Zhang | 若初</a>
  * @since 2020/3/20
  **/
-public class SxzhongfCustomClusterInvoker extends AbstractClusterInvoker {
+public class SxzhongfCustomClusterInvoker<T> extends AbstractClusterInvoker<T> {
 
     public SxzhongfCustomClusterInvoker(Directory directory) {
         super(directory);
     }
 
     @Override
-    protected Result doInvoke(Invocation invocation, List list, LoadBalance loadbalance) throws RpcException {
+    protected Result doInvoke(Invocation invocation, List<Invoker<T>> invokers, LoadBalance loadbalance) throws RpcException {
+        checkInvokers(invokers, invocation);
+        System.out.printf("自定义集群容错。");
         return null;
     }
 }
