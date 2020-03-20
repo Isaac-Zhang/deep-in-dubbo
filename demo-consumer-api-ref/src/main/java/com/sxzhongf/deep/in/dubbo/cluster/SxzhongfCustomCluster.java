@@ -15,6 +15,6 @@ public class SxzhongfCustomCluster implements Cluster {
 
     @Override
     public <T> Invoker<T> join(Directory<T> directory) throws RpcException {
-        return null;
+        return new SxzhongfCustomClusterInvoker(directory);
     }
 }
