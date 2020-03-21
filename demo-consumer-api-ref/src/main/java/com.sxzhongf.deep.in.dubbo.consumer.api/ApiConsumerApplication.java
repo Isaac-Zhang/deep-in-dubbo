@@ -33,13 +33,15 @@ public class ApiConsumerApplication {
 //        referenceConfig.setCluster("isaacBroadcast");
         // 6. 设置服务分组和版本
 //        referenceConfig.setGroup("*");
-        referenceConfig.setGroup("dubbo-sxzhongf-group,dubbo");
+        referenceConfig.setGroup("dubbo-sxzhongf-group");
         // 设置路由匹配规则
         // 条件路由规则的格式如下：([服务消费者匹配条件] => [服务提供者匹配条件])
 //        referenceConfig.setRouter();
         referenceConfig.setVersion("1.0.0");
         // 重试5次+默认1次，共执行6次。org.apache.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke
         referenceConfig.setRetries(5);
+        // 自定义cluster
+        referenceConfig.setCluster("sxzhongfCluster");
         // 7. 引用服务
         IGreetingService greetingService = referenceConfig.get();
         // 8. 设置隐式参数
