@@ -29,8 +29,10 @@ public class ApiConsumerApplication {
         // 默认重试3次
         referenceConfig.setTimeout(5000);
 //        // 5. 设置自定义负载均衡策略和集群容错策略
-//        referenceConfig.setLoadbalance("isaacLoadBalance");
-//        referenceConfig.setCluster("isaacBroadcast");
+        // 自定义cluster
+//        referenceConfig.setCluster("sxzhongfCluster");
+        //自定义loadbalance
+        referenceConfig.setLoadbalance("sxzhongfCustomLoadBalance");
         // 6. 设置服务分组和版本
 //        referenceConfig.setGroup("*");
         referenceConfig.setGroup("dubbo-sxzhongf-group");
@@ -40,8 +42,7 @@ public class ApiConsumerApplication {
         referenceConfig.setVersion("1.0.0");
         // 重试5次+默认1次，共执行6次。org.apache.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke
         referenceConfig.setRetries(5);
-        // 自定义cluster
-        referenceConfig.setCluster("sxzhongfCluster");
+
         // 7. 引用服务
         IGreetingService greetingService = referenceConfig.get();
         // 8. 设置隐式参数
