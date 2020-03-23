@@ -43,6 +43,8 @@ public class ApiProviderApplication {
         // 6. 设置自定义线程模型
         HashMap<String, String> parameters = new HashMap<>();
         parameters.put("dispatcher", "sxzhongfCustomDispatcher");
+        //自定义线程池
+        parameters.put("threadpool","sxzhongfCustomThreadPool");
         serviceConfig.setParameters(parameters);
 
         // 7. 导出服务，启动Netty监听链接请求，并将服务注册到注册中心
