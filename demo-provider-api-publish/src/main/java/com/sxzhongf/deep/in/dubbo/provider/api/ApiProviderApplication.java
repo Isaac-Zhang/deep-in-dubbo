@@ -1,6 +1,7 @@
 package com.sxzhongf.deep.in.dubbo.provider.api;
 
 import com.sxzhongf.deep.in.dubbo.api.service.IGreetingService;
+import java.util.HashMap;
 import org.apache.dubbo.config.ApplicationConfig;
 import org.apache.dubbo.config.RegistryConfig;
 import org.apache.dubbo.config.ServiceConfig;
@@ -39,11 +40,10 @@ public class ApiProviderApplication {
         serviceConfig.setDelay(1000);
         RpcContext.getContext().setAttachment("age","18");
 
-
-        // 6. 设置自定义线程池策略
-//        HashMap<String, String> parameters = new HashMap<>();
-//        parameters.put("threadpool", "isaacthreadpool");
-//        serviceConfig.setParameters(parameters);
+        // 6. 设置自定义线程模型
+        HashMap<String, String> parameters = new HashMap<>();
+        parameters.put("dispatcher", "sxzhongfCustomDispatcher");
+        serviceConfig.setParameters(parameters);
 
         // 7. 导出服务，启动Netty监听链接请求，并将服务注册到注册中心
         serviceConfig.export();
