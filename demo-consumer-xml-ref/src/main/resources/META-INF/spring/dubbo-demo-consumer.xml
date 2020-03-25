@@ -16,7 +16,7 @@
                      version="1.0.0"
                      interface="com.sxzhongf.deep.in.dubbo.api.service.IGreetingService">
 
-        <dubbo:method name="sayHello" retries="3" timeout="5000" mock="false" />
-        <dubbo:method name="testGeneric" retries="3" timeout="5000" mock="false" />
+        <dubbo:method name="sayHello" retries="3" timeout="5000" mock="false" actives="5" />
+        <dubbo:method name="testGeneric" retries="3" timeout="5000" mock="false" actives="1" />
     </dubbo:reference>
 </beans>
