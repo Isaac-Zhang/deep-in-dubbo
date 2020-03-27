@@ -17,6 +17,7 @@
         <module>demo-consumer-api-ref</module>
         <module>demo-consumer-api-generic-ref</module>
         <module>demo-spi</module>
+        <module>demo-provider-nacos-xml-publish</module>
     </modules>
     <name>deep-in-dubbo</name>
 
