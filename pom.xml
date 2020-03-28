@@ -18,6 +18,7 @@
         <module>demo-consumer-api-generic-ref</module>
         <module>demo-spi</module>
         <module>demo-provider-nacos-xml-publish</module>
+      <module>demo-custom-registry-founding</module>
     </modules>
     <name>deep-in-dubbo</name>
 
